@@ -6,11 +6,6 @@ const Slide = ({data}) => {
 
     const [currentIndex,setCurrentIndex] = useState(0)
 
-    const sliderStyles = {
-        height: "100%",
-        position : "relative"
-    }
-
     const slideStyles = {
         width : "100%",
         height : "100%",
@@ -20,28 +15,6 @@ const Slide = ({data}) => {
         backgroundImage : `url(${data[currentIndex].url})`
     }
     
-    const leftArrowStyles = {
-        position: 'absolute',
-        top : '50%',
-        transform : 'translate(0,-50%)',
-        left : '32px',
-        fontSize : '55px',
-        color : '#fff',
-        zIndex : 1333,
-        cursor : 'pointer',
-    }
-
-    const rightArrowStyles = {
-        position: 'absolute',
-        top : '50%',
-        transform : 'translate(0,-50%)',
-        right : '32px',
-        fontSize : '55px',
-        color : '#fff',
-        zIndex : 133,
-        cursor : 'pointer',
-    }
-
     const dotsContainerStyles = {
         display :"flex",
         justifyContent : "center",
@@ -75,16 +48,28 @@ const Slide = ({data}) => {
     }
 
   return (
-    <div style = {sliderStyles}>
-        <div style={leftArrowStyles} onClick={goToPrevious}>{"<"}</div>
-        <div style={rightArrowStyles} onClick={goToNext}>{">"}</div>
+    <div className = 'sliderStyles'>
+
+        <div className='leftButton'>
+            <button className = 'leftArrowStyles'  onClick={goToPrevious}>
+                {"<"}
+            </button>
+        </div>
+
+        <div className='rightButton'>
+            <button className = 'rightArrowStyles' onClick={goToNext}>
+                {">"}
+            </button>
+        </div>
+
         <div style={slideStyles}></div>
-        <div style = {dotsContainerStyles}>
+
+        <div className='dotsContainerStyles'>
         {
             data.map((slide,slideIndex)=> (
-                <div key={slideIndex} style = {dotStyle} onClick={() => goToSlide(slideIndex)}>
-
-                    <div style={{color : slideIndex === currentIndex ? "blue" : "black" }}>
+                <div key={slideIndex} className='dotStyle' >
+                    <div style={{color : slideIndex === currentIndex ? "blue" : "black" }}
+                    onClick={() => goToSlide(slideIndex)}>
                         {"."}
                     </div>
 

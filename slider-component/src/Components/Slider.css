@@ -1,0 +1,72 @@
+.sliderStyles{
+    height: 100%;
+    position: relative;
+}
+
+.leftArrowStyles{
+    position: absolute;
+    top: 50%;
+    transform: translate(0,-50%);
+    background: none;
+    outline: none;
+    border: none;
+    left: 0%;
+    font-size: 55px;
+    color: #fff;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.rightArrowStyles{
+    position: absolute;
+    background: none;
+    outline: none;
+    border: none;
+    top: 50%;
+    transform: translate(0,-50%);
+    right: 0;
+    font-size: 55px;
+    color: #fff;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.leftButton{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 7%;
+    z-index: 9;
+    background-color: rgba(128, 128, 128, 0.29);
+}
+
+.rightButton{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    right: 0;
+    left: 100;
+    bottom: 0;
+    width: 7%;
+    background-color: rgba(128, 128, 128, 0.29);
+    z-index: 9;
+}
+
+.dotsContainerStyles{
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.dotStyle{
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 55px;
+}
